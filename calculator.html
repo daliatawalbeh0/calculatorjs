@@ -1,0 +1,346 @@
+<html>
+  <head>
+    <title>calc</title>
+    <style>
+      .grid-container {
+        display: grid;
+        text-align: center;
+        width: 400px;
+        height: 500px;
+        background-color: rgb(164, 209, 251);
+        gap: 10px;
+        margin-left: 470px;
+        margin-top: 150px;
+        padding-left: 20px;
+        padding-top: 15px;
+        border: none;
+        border-radius: 10px;
+      }
+
+      #empty {
+        grid-row: 1;
+        grid-column: 1 / span 4;
+        background-color: white;
+        box-shadow: 0px 5px 5px rgb(183, 180, 180);
+        text-align: center;
+        font-weight: bold;
+        font-size: xx-large;
+        height: 70px;
+        width: 368px;
+        padding-right: 10px;
+      }
+
+      #d1 {
+        grid-row: 2;
+        grid-column: 1;
+        background-color: white;
+        box-shadow: 0px 5px 5px rgb(183, 180, 180);
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        font-weight: bold;
+        font-size: xx-large;
+        transition: 0.3s;
+        cursor: pointer;
+        border-radius: 8px;
+      }
+
+      #d2 {
+        grid-row: 2;
+        grid-column: 2;
+        background-color: white;
+        box-shadow: 0px 5px 5px rgb(183, 180, 180);
+        width: 70px;
+        text-align: center;
+        font-weight: bold;
+        font-size: xx-large;
+        height: 70px;
+      }
+
+      #d3 {
+        grid-row: 2;
+        grid-column: 3;
+        background-color: white;
+        box-shadow: 0px 5px 5px rgb(183, 180, 180);
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        font-weight: bold;
+        font-size: xx-large;
+      }
+
+      #plus {
+        grid-row: 2;
+        grid-column: 4;
+        background-color: white;
+        box-shadow: 0px 5px 5px rgb(183, 180, 180);
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        font-weight: bold;
+        font-size: xx-large;
+
+        background-color: rgb(255, 255, 157);
+      }
+
+      #d4 {
+        grid-row: 3;
+        grid-column: 1;
+        background-color: white;
+        box-shadow: 0px 5px 5px rgb(183, 180, 180);
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        font-weight: bold;
+        font-size: xx-large;
+      }
+
+      #d5 {
+        grid-row: 3;
+        grid-column: 2;
+        background-color: white;
+        box-shadow: 0px 5px 5px rgb(183, 180, 180);
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        font-weight: bold;
+        font-size: xx-large;
+      }
+
+      #d6 {
+        grid-row: 3;
+        grid-column: 3;
+        background-color: white;
+        box-shadow: 0px 5px 5px rgb(183, 180, 180);
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        font-weight: bold;
+        font-size: xx-large;
+      }
+
+      #sub {
+        grid-row: 3;
+        grid-column: 4;
+        background-color: white;
+        box-shadow: 0px 5px 5px rgb(183, 180, 180);
+        width: 70px;
+        text-align: center;
+        font-weight: bold;
+        font-size: xx-large;
+        height: 70px;
+        background-color: rgb(255, 255, 157);
+      }
+
+      #d7 {
+        grid-row: 4;
+        grid-column: 1;
+        background-color: white;
+        box-shadow: 0px 5px 5px rgb(183, 180, 180);
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        font-weight: bold;
+        font-size: xx-large;
+      }
+
+      #d8 {
+        grid-row: 4;
+        grid-column: 2;
+        background-color: white;
+        box-shadow: 0px 5px 5px rgb(183, 180, 180);
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        font-weight: bold;
+        font-size: xx-large;
+      }
+
+      #d9 {
+        grid-row: 4;
+        grid-column: 3;
+        background-color: white;
+        box-shadow: 0px 5px 5px rgb(183, 180, 180);
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        font-weight: bold;
+        font-size: xx-large;
+      }
+
+      #mul {
+        grid-row: 4;
+        grid-column: 4;
+        background-color: white;
+        box-shadow: 0px 5px 5px rgb(183, 180, 180);
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        font-weight: bold;
+        font-size: xx-large;
+      }
+
+      #c {
+        grid-row: 5;
+        grid-column: 1;
+        background-color: white;
+        box-shadow: 0px 5px 5px rgb(183, 180, 180);
+        width: 70px;
+        height: 70px;
+        background-color: rgb(255, 120, 143);
+        text-align: center;
+        font-weight: bold;
+        font-size: xx-large;
+      }
+
+      #d0 {
+        grid-row: 5;
+        grid-column: 2;
+        background-color: white;
+        box-shadow: 0px 5px 5px rgb(183, 180, 180);
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        font-weight: bold;
+        font-size: xx-large;
+      }
+
+      #equal {
+        grid-row: 5;
+        grid-column: 3;
+        background-color: white;
+        box-shadow: 0px 5px 5px rgb(183, 180, 180);
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        font-weight: bold;
+        font-size: xx-large;
+      }
+
+      #div {
+        grid-row: 5;
+        grid-column: 4;
+        background-color: white;
+        box-shadow: 0px 5px 5px rgb(183, 180, 180);
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        font-weight: bold;
+        font-size: xx-large;
+      }
+    </style>
+  </head>
+
+  <body style="background-color: rgb(182, 203, 139)">
+    <div class="grid-container">
+      <div id="empty"></div>
+
+      <button id="d1">1</button>
+      <button id="d2">2</button>
+      <button id="d3">3</button>
+      <button id="d4">4</button>
+      <button id="d5">5</button>
+      <button id="d6">6</button>
+      <button id="d7">7</button>
+      <button id="d8">8</button>
+      <button id="d9">9</button>
+      <button id="c">C</button>
+      <button id="d0">0</button>
+      <button id="equal">=</button>
+      <button id="plus">+</button>
+      <button id="sub">-</button>
+      <button id="mul">*</button>
+      <button id="div">/</button>
+    </div>
+
+    <script>
+      const one = document.getElementById("d1");
+
+      const dis = document.getElementById("empty");
+      //   function oneone() {
+      //     event.preventDefault();
+      //     dis.innerHTML = "1";
+      //   }
+      var calculation = "";
+      one.addEventListener("click", function () {
+        calculation += "1";
+        dis.innerHTML = calculation;
+      });
+      const two = document.getElementById("d2");
+      two.addEventListener("click", function () {
+        calculation += "2";
+        dis.innerHTML = calculation;
+      });
+      const three = document.getElementById("d3");
+      three.addEventListener("click", function () {
+        calculation += "3";
+        dis.innerHTML = calculation;
+      });
+      const four = document.getElementById("d4");
+      four.addEventListener("click", function () {
+        calculation += "4";
+        dis.innerHTML = calculation;
+      });
+      const five = document.getElementById("d5");
+      five.addEventListener("click", function () {
+        calculation += "5";
+        dis.innerHTML = calculation;
+      });
+      const six = document.getElementById("d6");
+      six.addEventListener("click", function () {
+        calculation += "6";
+        dis.innerHTML = calculation;
+      });
+      const seven = document.getElementById("d7");
+      seven.addEventListener("click", function () {
+        calculation += "7";
+        dis.innerHTML = calculation;
+      });
+      const eight = document.getElementById("d8");
+      eight.addEventListener("click", function () {
+        calculation += "8";
+        dis.innerHTML = calculation;
+      });
+      const nine = document.getElementById("d9");
+      nine.addEventListener("click", function () {
+        calculation += "9";
+        dis.innerHTML = calculation;
+      });
+      const zero = document.getElementById("d0");
+      zero.addEventListener("click", function () {
+        calculation += "10";
+        dis.innerHTML = calculation;
+      });
+      const sub = document.getElementById("sub");
+      sub.addEventListener("click", function () {
+        calculation += "-";
+        dis.innerHTML = calculation;
+      });
+      const plus = document.getElementById("plus");
+      plus.addEventListener("click", function () {
+        calculation += "+";
+        dis.innerHTML = calculation;
+      });
+      const div = document.getElementById("div");
+      div.addEventListener("click", function () {
+        calculation += "/";
+        dis.innerHTML = calculation;
+      });
+      const mul = document.getElementById("mul");
+      mul.addEventListener("click", function () {
+        calculation += "*";
+        dis.innerHTML = calculation;
+      });
+      const clear = document.getElementById("c");
+      clear.addEventListener("click", function () {
+        calculation = ""; // Clear the calculation variable
+        dis.innerHTML = calculation;
+      });
+      const equal = document.getElementById("equal");
+      equal.addEventListener("click", function () {
+        dis.innerHTML = eval(calculation);
+        calculation = eval(calculation);
+      });
+    </script>
+  </body>
+</html>
